@@ -25,13 +25,16 @@ body {
   text-align: center;
   border: 3px solid #ccc;
 }
+
 #slider input[type="radio"] {
   display: none;
 }
+
 #slider label {
   cursor: pointer;
   text-decoration: none;
 }
+
 #slides {
   padding: 10px;
   
@@ -39,11 +42,13 @@ body {
   position: relative;
   z-index: 1;
 }
+
 #overflow {
   width: 100%;
   overflow-x: hidden;
   /* height: 500px; */
 }
+
 #slide1:checked ~ #slides .inner {
   margin-left: 0;
 }
@@ -190,10 +195,26 @@ label:nth-child(5)::after {
 
 #bullets label:hover {
   background-color: white;
-  border: 1px inset white;
+  border: 1px groove white;
   width: 8px;
   height: 8px;
 }
+
+#bullets label:active{
+  background-color: pink;
+  border: 1px groove pink;
+  width: 8px;
+  height: 8px;
+}
+
+#slide1:checked ~ #bottom #bullets label:nth-child(1):hover,
+#slide2:checked ~ #bottom #bullets label:nth-child(2):hover,
+#slide3:checked ~ #bottom #bullets label:nth-child(3):hover,
+#slide4:checked ~ #bottom #bullets label:nth-child(4):hover,
+#slide5:checked ~ #bottom #bullets label:nth-child(5):hover {
+  border: 1px groove white;
+}
+
 
 #slide1:checked ~ #bottom #bullets label:nth-child(1),
 #slide2:checked ~ #bottom #bullets label:nth-child(2),
@@ -201,7 +222,7 @@ label:nth-child(5)::after {
 #slide4:checked ~ #bottom #bullets label:nth-child(4),
 #slide5:checked ~ #bottom #bullets label:nth-child(5) {
   background-color: transparent;
-  border: 1px inset #71abff;
+  border: 1px groove #71abff;
   width: 8px;
   height: 8px;
 }
