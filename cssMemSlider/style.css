@@ -15,6 +15,7 @@ body {
   height: 100vh;
   font-family: "Quicksand";
   font-weight: 700;
+  background-image: url(./assets/bg.jpg);
 }
 
 #slider {
@@ -22,6 +23,7 @@ body {
   width: 800px;
   max-width: 100%;
   text-align: center;
+  border: 3px solid #ccc;
 }
 #slider input[type="radio"] {
   display: none;
@@ -32,7 +34,7 @@ body {
 }
 #slides {
   padding: 10px;
-  border: 3px solid #ccc;
+  
   background: #fff;
   position: relative;
   z-index: 1;
@@ -186,6 +188,12 @@ label:nth-child(5)::after {
   height: 500%;
 }
 
+#bullets label:hover {
+  background-color: white;
+  border: 1px inset white;
+  width: 8px;
+  height: 8px;
+}
 
 #slide1:checked ~ #bottom #bullets label:nth-child(1),
 #slide2:checked ~ #bottom #bullets label:nth-child(2),
@@ -207,6 +215,7 @@ label:nth-child(5)::after {
 .bottom {
   display: flex;
   padding-top: 15px;
+  background: white;
 }
 
 .captions {
