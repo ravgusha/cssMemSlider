@@ -16,11 +16,12 @@ body {
   font-family: "Quicksand";
   font-weight: 700;
   background-image: url(./assets/bg.jpg);
+  background-size: cover;
 }
 
 #slider {
   margin: 0 auto;
-  width: 800px;
+  width: 50vw;
   max-width: 100%;
   text-align: center;
   border: 3px solid #ccc;
@@ -37,7 +38,7 @@ body {
 
 #slides {
   padding: 10px;
-  
+
   background: #fff;
   position: relative;
   z-index: 1;
@@ -95,7 +96,7 @@ body {
   height: 300px;
 }
 #slides .slide {
-  width: 16.66%;
+  width: 16.67%;
   float: left;
   display: flex;
   justify-content: center;
@@ -112,6 +113,7 @@ body {
 #slides .slide_2 {
   background-image: url(./assets/2.jpg);
   background-size: cover;
+  background-position: top;
 }
 #slides .slide_3 {
   background-image: url(./assets/3.png);
@@ -138,10 +140,11 @@ body {
   text-align: center;
   white-space: nowrap;
 }
+
 #bullets label {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 100%;
   background: #71abff;
   position: relative;
@@ -196,15 +199,15 @@ label:nth-child(5)::after {
 #bullets label:hover {
   background-color: white;
   border: 1px groove white;
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
-#bullets label:active{
-  background-color: pink;
-  border: 1px groove pink;
-  width: 8px;
-  height: 8px;
+#bullets label:active {
+  background-color: #1e70ba;
+  border: 1px groove #1e70ba;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 #slide1:checked ~ #bottom #bullets label:nth-child(1):hover,
@@ -214,7 +217,6 @@ label:nth-child(5)::after {
 #slide5:checked ~ #bottom #bullets label:nth-child(5):hover {
   border: 1px groove white;
 }
-
 
 #slide1:checked ~ #bottom #bullets label:nth-child(1),
 #slide2:checked ~ #bottom #bullets label:nth-child(2),
@@ -226,12 +228,6 @@ label:nth-child(5)::after {
   width: 8px;
   height: 8px;
 }
-/* @media screen and (max-width: 900px) {
-  #slides {
-    max-width: calc(100% - 140px);
-    margin: 0 auto;
-  }
-} */
 
 .bottom {
   display: flex;
@@ -239,12 +235,6 @@ label:nth-child(5)::after {
   background: white;
 }
 
-.captions {
-  width: 640px;
-  max-height: 30px;
-  overflow: hidden;
-  position: relative;
-}
 .caption {
   width: 16.7%;
   float: left;
@@ -258,4 +248,27 @@ label:nth-child(5)::after {
 #bottom .inner {
   width: 600%;
   transition: margin-left 800ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@media screen and (max-width: 768px) {
+  #slider {
+    width: 90vh;
+  }
+  
+  #slides {
+    border-bottom: 3px solid #ccc;
+  }
+
+  #bullets {
+    position: relative;
+    bottom: 5vh;
+  }
+  .bottom {
+    display: inline-block;
+  }
+  #bottom #overflow {
+    top: 23px;
+    position: relative;
+    /* left: 90px; */
+  }
 }
